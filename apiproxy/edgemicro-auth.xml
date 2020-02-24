@@ -4,18 +4,20 @@
     <Basepaths>/edgemicro-auth</Basepaths>
     <Basepaths>/edgemicro-auth</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1567144173796</CreatedAt>
-    <CreatedBy>defaultUser</CreatedBy>
+    <CreatedAt>1582515203390</CreatedAt>
+    <CreatedBy>alex_chumak@hotmail.com</CreatedBy>
     <Description>edgemicro-auth</Description>
     <DisplayName>edgemicro-auth</DisplayName>
-    <LastModifiedAt>1567144173796</LastModifiedAt>
-    <LastModifiedBy>defaultUser</LastModifiedBy>
-    <ManifestVersion>SHA-512:bf76071973427038ee5c020a053a9ea192f2d0f35bf7e26f7214ead92d716a500fd0669d95f2046de3084ccd4d21918a6b14bd461df2be715125a6993bae0bd1</ManifestVersion>
+    <LastModifiedAt>1582515203390</LastModifiedAt>
+    <LastModifiedBy>alex_chumak@hotmail.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:ee5258cf8738bc7cd712db03774e1f96633a80196bc82fb98b46bc42ef8f50e2fe924cf1a1993b290973918ddead45b841948e761652966b0663759d4d29cd63</ManifestVersion>
     <Policies>
         <Policy>Access-App-Info-2</Policy>
         <Policy>Access-App-Info</Policy>
         <Policy>AccessTokenRequest</Policy>
-	<Policy>Adjust-Quota</Policy>
+        <Policy>Adjust-Quota</Policy>
+        <Policy>App-Custom-Attributes-to-JSON-2</Policy>
+        <Policy>App-Custom-Attributes-to-JSON</Policy>
         <Policy>Authenticate-Call</Policy>
         <Policy>AuthenticationError</Policy>
         <Policy>Create-OAuth-Request</Policy>
@@ -31,8 +33,10 @@
         <Policy>Get-Public-Key</Policy>
         <Policy>Get-Public-Keys</Policy>
         <Policy>JavaCallout</Policy>
+        <Policy>Lookup-App-Custom-Attributes-Cache</Policy>
         <Policy>Lookup-Entity</Policy>
         <Policy>Lookup-Filter</Policy>
+        <Policy>Populate-App-Custom-Attributes-Cache</Policy>
         <Policy>Populate-Entity</Policy>
         <Policy>Populate-Product-List</Policy>
         <Policy>Products-to-JSON-2</Policy>
@@ -72,4 +76,3 @@
     <TargetServers/>
     <TargetEndpoints/>
 </APIProxy>
-

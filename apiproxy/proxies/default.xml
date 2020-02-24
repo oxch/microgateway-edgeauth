@@ -47,21 +47,37 @@
                     <Name>Verify-API-Key</Name>
                 </Step>
                 <Step>
+                    <FaultRules/>
                     <Name>Lookup-Entity</Name>
                 </Step>
                 <Step>
                     <FaultRules/>
-                    <Name>Access-App-Info-2</Name>
-                    <Condition>lookupcache.Lookup-Entity.cachehit = false</Condition>
+                    <Name>Lookup-App-Custom-Attributes-Cache</Name>
                 </Step>
                 <Step>
+                    <Condition>(lookupcache.Lookup-Entity.cachehit = false) or (lookupcache.Lookup-App-Custom-Attributes-Cache.cachehit = false)</Condition>
+                    <FaultRules/>
+                    <Name>Access-App-Info-2</Name>
+                </Step>
+                <Step>
+                    <Condition>lookupcache.Lookup-Entity.cachehit = false</Condition>
                     <FaultRules/>
                     <Name>Products-to-JSON-2</Name>
-                    <Condition>lookupcache.Lookup-Entity.cachehit = false</Condition>
                 </Step>
                 <Step>
-                    <Name>Populate-Entity</Name>
+                    <Condition>lookupcache.Lookup-App-Custom-Attributes-Cache.cachehit = false</Condition>
+                    <FaultRules/>
+                    <Name>App-Custom-Attributes-to-JSON-2</Name>
+                </Step>
+                <Step>
                     <Condition>lookupcache.Lookup-Entity.cachehit = false</Condition>
+                    <FaultRules/>
+                    <Name>Populate-Entity</Name>
+                </Step>
+                <Step>
+                    <Condition>lookupcache.Lookup-App-Custom-Attributes-Cache.cachehit = false</Condition>
+                    <FaultRules/>
+                    <Name>Populate-App-Custom-Attributes-Cache</Name>
                 </Step>
                 <Step>
                     <FaultRules/>
@@ -123,13 +139,16 @@
                     <Name>Extract-OAuth-Params</Name>
                 </Step>
                 <Step>
+                    <FaultRules/>
                     <Name>Validate-Params</Name>
                 </Step>
                 <Step>
-                    <Name>AuthenticationError</Name>
                     <Condition>errText isnot null</Condition>
+                    <FaultRules/>
+                    <Name>AuthenticationError</Name>
                 </Step>
                 <Step>
+                    <FaultRules/>
                     <Name>Verify-API-Key</Name>
                 </Step>
                 <Step>
@@ -146,11 +165,16 @@
                 </Step>
                 <Step>
                     <FaultRules/>
+                    <Name>App-Custom-Attributes-to-JSON</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
                     <Name>AccessTokenRequest</Name>
                 </Step>
                 <Step>
-                    <Name>Raise-Fault-Unknown-Request</Name>
                     <Condition>oauthV2.AccessTokenRequest.failed is true</Condition>
+                    <FaultRules/>
+                    <Name>Raise-Fault-Unknown-Request</Name>
                 </Step>
                 <Step>
                     <FaultRules/>
@@ -191,6 +215,10 @@
                 <Step>
                     <FaultRules/>
                     <Name>Products-to-JSON</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>App-Custom-Attributes-to-JSON</Name>
                 </Step>
                 <Step>
                     <FaultRules/>

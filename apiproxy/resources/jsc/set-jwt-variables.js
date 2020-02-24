@@ -36,6 +36,9 @@ if (scope) {
     context.setVariable("scope", scopearr.join());
 }
 
+var appCustomAttributes = JSON.parse(context.getVariable('appCustomAttributes'));
+if (appCustomAttributes && appCustomAttributes.Attribute) {context.setVariable("appCustomAttributesMap", JSON.stringify(appCustomAttributes.Attribute));}
+
 context.setVariable("apiProductList", apiProductsList.join());
 context.setVariable("nbf", new Date().toUTCString());
 context.setVariable("iss", context.getVariable("proxyProto") + "://" + context.getVariable("proxyHost") + context.getVariable("proxy.basepath") + context.getVariable("proxy.pathsuffix"));

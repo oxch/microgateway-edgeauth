@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XMLToJSON name="App-Custom-Attributes-to-JSON-2" enabled="true" continueOnError="false" async="false">
+    <DisplayName>App Custom Attributes to JSON 2</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Options>
+        <RecognizeBoolean>false</RecognizeBoolean>
+        <RecognizeNumber>false</RecognizeNumber>
+        <RecognizeNull>true</RecognizeNull>
+        <TextAlwaysAsProperty>false</TextAlwaysAsProperty>
+        <TextNodeName/>
+        <StripLevels>1</StripLevels>
+        <TreatAsArray>
+            <Path unwrap="false">Attributes/Attribute</Path>
+        </TreatAsArray>
+    </Options>
+    <OutputVariable>appCustomAttributes</OutputVariable>
+    <Source>AccessEntity.ChildNodes.Access-App-Info-2.App.Attributes</Source>
+</XMLToJSON>

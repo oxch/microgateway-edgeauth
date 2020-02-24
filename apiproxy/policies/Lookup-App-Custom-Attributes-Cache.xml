@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache name="Lookup-App-Custom-Attributes-Cache" enabled="true" continueOnError="false" async="false">
+    <DisplayName>Lookup App Custom Attributes Cache</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <CacheKey>
+        <KeyFragment ref="apikey"/>
+    </CacheKey>
+    <Scope>Application</Scope>
+    <AssignTo>appCustomAttributes</AssignTo>
+</LookupCache>
